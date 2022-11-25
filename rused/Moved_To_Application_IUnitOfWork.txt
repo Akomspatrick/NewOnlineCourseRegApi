@@ -1,0 +1,15 @@
+﻿using Domain.Base;
+using NewOnlineCourseReg.Domain.CourseRegistration;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace Domain.Interfaces
+{
+    public interface Moved_To_Application_IUnitOfWork
+    {
+        Task<int> SaveChangesAsync();
+
+        Moved_To_Application_IAsyncRepository<T> AsyncRepository<T>() where T : BaseEntity;
+    }
+}
+

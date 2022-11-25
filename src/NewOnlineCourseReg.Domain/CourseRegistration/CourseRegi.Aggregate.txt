@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Domain.Base;
+
+namespace NewOnlineCourseReg.Domain.CourseRegistration
+{
+    public partial class CourseRegi :IAggregateRoot
+    {
+        private void InitCourseRegistrationForm()
+        {
+            //this will load the courseform 
+            //throw new NotImplementedException();
+        }
+
+        public void AddCourse(Course course)
+        {
+            //this will 
+        }
+
+        public void DeleteCourse(Course course)
+
+        {
+            // this will remove a course from CourseForm
+
+        }
+
+        public void LoadCourseRegistrationForm(string MatricNo, int Sem)
+        {
+            // this is same as initcourseregform
+        }
+
+        public void SaveCourseRegistrationForm(string MatricNo, int Sem)
+        {
+            //
+        }
+    }
+}

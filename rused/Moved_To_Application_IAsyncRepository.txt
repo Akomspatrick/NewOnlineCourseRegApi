@@ -1,0 +1,27 @@
+﻿using Domain.Base;
+using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
+
+namespace Domain.Interfaces
+{
+    public interface Moved_To_Application_IAsyncRepository<T> where T : BaseEntity
+    {
+        Task<T> AddAsync(T entity);
+
+        Task<T> UpdateAsync(T entity);
+
+        Task<bool> DeleteAsync(T entity);
+
+        Task<T> GetAsync(Expression<Func<T, bool>> expression);
+
+        Task<List<T>> ListAsync(Expression<Func<T, bool>> expression);
+
+
+        IEnumerable<T> Get(Expression<Func<T, bool>> filter = null,    Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = "");
+    
+
+
+    }
+}

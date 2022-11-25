@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="CourseRegistration\CourseRegi.Aggregate.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="CourseRegistration\CourseRegi.Aggregate.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NewOnlineCourseReg.SharedKernel\NewOnlineCourseReg.SharedKernel.csproj" />
+  </ItemGroup>
+
+</Project>
