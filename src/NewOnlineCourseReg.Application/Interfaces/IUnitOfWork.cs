@@ -10,6 +10,7 @@ namespace NewOnlineCourseReg.Application.Interfaces
         Task<int> SaveChangesAsync();
 
         IAsyncRepository<T> AsyncRepository<T>() where T : BaseEntity;
+        IStudentRepository studentRepository { get; }
     }
 }
 

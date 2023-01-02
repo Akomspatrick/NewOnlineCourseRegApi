@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace NewOnlineCourseReg.Infrastructure.Migrations
 {
     [DbContext(typeof(EFContext))]
-    [Migration("20221124140045_third")]
-    partial class third
+    [Migration("20221125152305_Sss")]
+    partial class Sss
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace NewOnlineCourseReg.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("NewOnlineCourseReg.Domain.CourseRegistration.Course", b =>
+            modelBuilder.Entity("NewOnlineCourseReg.Infrastructure.Data.Repositories.Models.Course", b =>
                 {
                     b.Property<string>("StudentId")
                         .HasColumnType("nvarchar(10)");
@@ -83,7 +83,7 @@ namespace NewOnlineCourseReg.Infrastructure.Migrations
                         });
                 });
 
-            modelBuilder.Entity("NewOnlineCourseReg.Domain.CourseRegistration.CourseRegistrationForm", b =>
+            modelBuilder.Entity("NewOnlineCourseReg.Infrastructure.Data.Repositories.Models.CourseRegistrationForm", b =>
                 {
                     b.Property<string>("StudentId")
                         .HasColumnType("nvarchar(10)");
@@ -123,7 +123,7 @@ namespace NewOnlineCourseReg.Infrastructure.Migrations
                         });
                 });
 
-            modelBuilder.Entity("NewOnlineCourseReg.Domain.CourseRegistration.Student", b =>
+            modelBuilder.Entity("NewOnlineCourseReg.Infrastructure.Data.Repositories.Models.Student", b =>
                 {
                     b.Property<string>("StudentId")
                         .HasMaxLength(10)
@@ -144,9 +144,9 @@ namespace NewOnlineCourseReg.Infrastructure.Migrations
                         });
                 });
 
-            modelBuilder.Entity("NewOnlineCourseReg.Domain.CourseRegistration.Course", b =>
+            modelBuilder.Entity("NewOnlineCourseReg.Infrastructure.Data.Repositories.Models.Course", b =>
                 {
-                    b.HasOne("NewOnlineCourseReg.Domain.CourseRegistration.CourseRegistrationForm", "CourseRegistrationForm")
+                    b.HasOne("NewOnlineCourseReg.Infrastructure.Data.Repositories.Models.CourseRegistrationForm", "CourseRegistrationForm")
                         .WithMany("coursesForm")
                         .HasForeignKey("StudentId", "session", "semester")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -155,9 +155,9 @@ namespace NewOnlineCourseReg.Infrastructure.Migrations
                     b.Navigation("CourseRegistrationForm");
                 });
 
-            modelBuilder.Entity("NewOnlineCourseReg.Domain.CourseRegistration.CourseRegistrationForm", b =>
+            modelBuilder.Entity("NewOnlineCourseReg.Infrastructure.Data.Repositories.Models.CourseRegistrationForm", b =>
                 {
-                    b.HasOne("NewOnlineCourseReg.Domain.CourseRegistration.Student", "student")
+                    b.HasOne("NewOnlineCourseReg.Infrastructure.Data.Repositories.Models.Student", "student")
                         .WithMany("CourseRegistrationForms")
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -166,7 +166,7 @@ namespace NewOnlineCourseReg.Infrastructure.Migrations
                     b.Navigation("student");
                 });
 
-            modelBuilder.Entity("NewOnlineCourseReg.Domain.CourseRegistration.Student", b =>
+            modelBuilder.Entity("NewOnlineCourseReg.Infrastructure.Data.Repositories.Models.Student", b =>
                 {
                     b.OwnsOne("NewOnlineCourseReg.Domain.ValueObjects.StudentName", "Name", b1 =>
                         {
@@ -211,12 +211,12 @@ namespace NewOnlineCourseReg.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("NewOnlineCourseReg.Domain.CourseRegistration.CourseRegistrationForm", b =>
+            modelBuilder.Entity("NewOnlineCourseReg.Infrastructure.Data.Repositories.Models.CourseRegistrationForm", b =>
                 {
                     b.Navigation("coursesForm");
                 });
 
-            modelBuilder.Entity("NewOnlineCourseReg.Domain.CourseRegistration.Student", b =>
+            modelBuilder.Entity("NewOnlineCourseReg.Infrastructure.Data.Repositories.Models.Student", b =>
                 {
                     b.Navigation("CourseRegistrationForms");
                 });

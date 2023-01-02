@@ -1,17 +1,11 @@
-﻿using Infrastructure.Data.EntitiesConfig;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using NewOnlineCourseReg.Application;
-using NewOnlineCourseReg.Domain.CourseRegistration;
-using NewOnlineCourseReg.Infrastructure.Data.EntitiesConfig;
+﻿using Microsoft.EntityFrameworkCore;
+using NewOnlineCourseReg.Infrastructure.Data.Repositories.Models;
 
 namespace Infrastructure.Data
 {
-    public class EFContext : DbContext//, IDatabaseService
+    public class EFContext : DbContext
     {
-        // private readonly IConfiguration _configuration;
-
-
+  
 
         public DbSet<CourseRegistrationForm> CourseRegistrationForms { get; set; }
         public DbSet<Course> Courses { get; set; }

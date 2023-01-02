@@ -26,6 +26,10 @@ namespace Infrastructure.Data.Repositories
             await _dbSet.AddAsync(entity);
             return entity;
         }
+        //public virtual void Add(TEntity entity)
+        //{
+        //    _dbSet.Add(entity);
+        //}
 
         public Task<Either<string, Task<T?>>> GetAsync(Expression<Func<T, bool>> expression)
         {
